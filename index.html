@@ -1,65 +1,371 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>QueryLoader v2 Demo - Gaya Design</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Ferrero Xmas Campaign</title>
+	<link rel="stylesheet" href="http://www.ferrero-praline.com.cn/css/pc/common.css">
+	<link rel="stylesheet" href="http://www.ferrero-praline.com.cn/css/pc/owl.carousel.css">
+	<link rel="stylesheet" href="http://www.ferrero-praline.com.cn/css/pc/owl.transitions.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="js/webupload/webuploader.css" />
+<!--[if gte IE 9]>
+<style type="text/css">	
+.cropit-image-zoom-input {
+	display:none;
+}
+</style>
+<![endif]-->
+</head>
+<body>
+	<div id="musichide">
+		<audio id="music" src="m/music/music.mp3" loop="loop" autoplay="autoplay"></audio>
+	</div>
+	<div class="core">
+		<div class="music"><img src="m/img/music.png"></div>
+		<div class="header" style="z-index:99">
+			<div class="menu">
+				<h4>Menu</h4>
+				<ul style="height: 4462px;">
+					<li>
+						<a href="http://www.ferrero-praline.com.cn/">首页</a>
+					</li>
+					<li><a href="/creations">意式创艺</a>
+						<div class="sub-menu">
+							<a href="http://www.ferrero-praline.com.cn/creations/collection">费列罗 COLLECTION</a>
+							<a href="http://www.ferrero-praline.com.cn/creations/rocher">费列罗 ROCHER</a>
+							<a href="http://www.ferrero-praline.com.cn/creations/raffaello">费列罗 RAFFAELLO</a>
+						</div>
+					</li>
+					<li><a href="http://www.ferrero-praline.com.cn/gifting">至臻礼遇</a>
+						<div class="sub-menu">
+							<div class="sub-sub-menu">
+								<a href="http://www.ferrero-praline.com.cn/gifting/info">臻礼攻略</a> 
+								<section>
+									<a href="http://www.ferrero-praline.com.cn/gifting/info#friends">朋友</a>
+									<a href="http://www.ferrero-praline.com.cn/gifting/info#family">家人</a>
+									<a href="http://www.ferrero-praline.com.cn/gifting/info#lover">爱人</a>
+									<a href="http://www.ferrero-praline.com.cn/gifting/info#colleague">同事</a>
+								</section>
+							</div>
+							<div class="sub-sub-menu">
+								<a href="http://www.ferrero-praline.com.cn/deco/valentine">心意彩蛋</a>
+								<section>
+									<a href="http://www.ferrero-praline.com.cn/deco/valentine">情人节</a>
+									<a href="http://www.ferrero-praline.com.cn/deco/wedding">婚礼</a>
+									<a href="http://www.ferrero-praline.com.cn/deco/birthday">生日</a>
+									<a href="http://www.ferrero-praline.com.cn/deco/christmas">圣诞节</a>
+									<a href="http://www.ferrero-praline.com.cn/deco/others">其他</a>
+								</section>
+							</div>
+						</div>
+					</li>
+					<li><a href="http://www.ferrero-praline.com.cn/passion">美味传奇</a>
+						<div class="sub-menu">
+							<a href="http://www.ferrero-praline.com.cn/passion/info#history">历史</a>
+							<a href="http://www.ferrero-praline.com.cn/passion/info#valeurs">价值</a>
+							<a href="http://www.ferrero-praline.com.cn/passion/info#how">秘诀</a>
+							<a href="http://www.ferrero-praline.com.cn/passion/info#ingredients">原料</a>
+							<a href="http://www.ferrero-praline.com.cn/passion/info#creation">费列罗创作</a>
+							<a href="http://www.ferrero-praline.com.cn/passion/info#quality">品质</a>
+						</div>
+					</li>
+					<li><a href="http://www.ferrero-praline.com.cn/italian">意式风情</a></li>
+					<li><a href="http://www.ferrero-praline.com.cn/wedding">金色婚礼</a></li>
+				</ul>
+			</div>
+			<a href="http://www.ferrero-praline.com.cn" class="logo"><img src="img/pc/logo.png" alt=""></a>
+			<div class="f-r">
+				<div class="hd-search">
+					<a href="javascript:;">搜索</a><input type="text" placeholder="搜索巧克力">
+				</div>
+				<a href="https://ferrero.tmall.com/view_shop.htm?spm=a220m.1000858.0.0.DElUBO&amp;shop_id=70148494&amp;rn=a93cbe0e12d5a93f2be8b7673d6e69d4" class="hd-cart" target="_blank">购物车</a>
+			</div>
+		</div>
+		<div class="snowcontainer">
+			<img class="snow snow12" src="img/snow2.png" alt="">
+		</div>
+		<div class="page page1">
+			<p class="wd"><span>3个字</span><br/><br/><span>对你珍视的人</span><br/><br/><span>说出心底的新春臻情祝福</span><br/><br/><img class="center" src="img/page1/jysgz.png" alt=""></p>
+			<a class="pass" href="javascript:;" onclick="_smq.push(['custom','Intro page','跳过']);"><img src="img/page1/pass.png" alt=""></a>
+		</div>
+		<div class="page page2">
+			<div class="slide1">
+				<img src="img/page2/s1.jpg" alt="">
+				<img class="word" src="img/page2/thx.png" alt="">
+			</div>
+			<div class="slide2">
+				<img src="img/page2/s2.jpg" alt="">
+				<img class="word" src="img/page2/yxf.png" alt="">
+			</div>
+			<div class="slide3">
+				<img src="img/page2/s3.jpg" alt="">
+				<img class="word" src="img/page2/zqc.png" alt="">
+			</div>
+			<a class="pass" href="javascript:;" onclick="_smq.push(['custom','Intro page','跳过']);"><img src="img/page2/pass.png" alt=""></a>
+		</div>
+		<div class="page page3">
+			<div class="inner">
+				<img class="img7" src="img/page3/d.png" alt="">
+				<img class="img6" src="img/page3/c.png" alt="">
+				<img class="img4" src="img/page3/a.png" alt="">
+				<img class="img5" src="img/page3/b.png" alt="">
+				<img class="img8" src="img/page3/e.png" alt="">
+				<a class="mail" href="javascript:;"><img class="img2" src="img/page3/mail.png" alt=""></a>
+				<img class="img3" src="img/page3/pen.png" alt="">
+				<img class="img1" src="img/page3/img1.png" alt="">
+			</div>
+			<div class="leftbanner">
+				<img class="p1" src="img/page3/p3wan.png" alt="">
+				<img class="p2" src="img/page3/p3yxf.png" alt="">
+				<img class="p3" src="img/page3/p3tgk.png" alt="">
+				<img class="t1" src="img/page3/wordwan.png" alt="">
+				<img class="t2" src="img/page3/wordyxf.png" alt="">
+				<img class="t3" src="img/page3/wordtgk.png" alt="">
+			</div>
+			<div class="rightbanner">
+				<img class="p1" src="img/page3/p3qcz.png" alt="">
+				<img class="p2" src="img/page3/p3ynw.png" alt="">
+				<img class="p3" src="img/page3/p3zqc.png" alt="">
+				<img class="t1" src="img/page3/wordqcz.png" alt="">
+				<img class="t2" src="img/page3/wordynw.png" alt="">
+				<img class="t3" src="img/page3/wordzqc.png" alt="">
+			</div>
+			<a class="pass" href="javascript:;" onclick="_smq.push(['custom','Page-1','GO']);"><img src="img/page3/pass.png" alt=""></a>
+		</div>
+		<div class="page page4">
+			<div class="photo"><img src="img/page4/imgwxx.jpg" alt=""></div>
+			<div class="disc">
+				<img src="img/page4/right.png" alt="">
+				<ul class="u1">
+					<li class="w3 selected" onclick="_smq.push(['custom','Page-2','11-万象新']);"><input type="radio" name="title" value="wxx" checked="checked" />万象新</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','12-合家欢']);"><input type="radio" name="title" value="hjh" />合家欢</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','11-情意浓']);"><input type="radio" name="title" value="qyn"/>情意浓</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','1-同欢享']);"><input type="radio" name="title" value="thx" />同欢享</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','12-新展望']);"><input type="radio" name="title" value="xzw" />新展望</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','1-情长在']);"><input type="radio" name="title" value="qcz" />情长在</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','6-常相聚']);"><input type="radio" name="title" value="cxj" />常相聚</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','10-誓终生']);"><input type="radio" name="title" value="szs" />誓终生</li>
+				</ul>
+				<ul class="u2">
+					<li class="w3" onclick="_smq.push(['custom','Page-2','3-同甘苦']);"><input type="radio" name="title" value="tgk" />同甘苦</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','9-我爱你']);"><input type="radio" name="title" value="wan" />我爱你</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','5-谢谢你']);"><input type="radio" name="title" value="xxn" />谢谢你</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','7-忆难忘']);"><input type="radio" name="title" value="ynw" />忆难忘</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','8-要幸福']);"><input type="radio" name="title" value="yxf" />要幸福</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','4-致青春']);"><input type="radio" name="title" value="zqc" />致青春</li>
+					<li class="w3" onclick="_smq.push(['custom','Page-2','2-知遇恩']);"><input type="radio" name="title" value="zye" />知遇恩</li>
+				</ul>
+				<a class="zdy" href="javascript:;"><span>自定义</span><input style="width:100px" type="radio" name="title" value="zdy" /></a>
+			</div>
+			<!-- <div class="dots">
+				<a class="dotl on" href="javascript:;"></a>
+				<a class="dotm off" href="javascript:;"></a>
+				<a class="dotr off" href="javascript:;"></a>
+			</div> -->
+			<a class="next" onclick="_smq.push(['custom','Page-2','继续']);" href="javascript:;"></a>
+		</div>
+		<div class="page page5">
+			<div class="left">
+				<img src="" alt="">
+				<div class="move" id="draggable">
+					<div class="title"><img src=""></div>
+					<div class="con"><img src=""></div>
+					<div class="txt"><span></span></div>
+					<a class="editbtn" onclick="_smq.push(['custom','Page-2','编辑']);" href="javascript:void(0);"></a>
+					<img class="movebar" src="img/movebar.png" alt="">
+				</div>		
+			</div>	
+			<div class="right">
+				<img id="tes" src="img/page5/right.jpg" alt="">
+				<table class="tab1">
+					<tr>
+						<td><input type="radio" name="title2" value="wxx" /><img src="img/page5/s_wxx.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="hjh" /><img src="img/page5/s_hjh.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="qyn" /><img src="img/page5/s_qyn.jpg" alt=""></td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="title2" value="thx" /><img src="img/page5/s_thx.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="xzw" /><img src="img/page5/s_xzw.jpg" alt=""></td>
+						<td><img class="next" src="img/page5/arrow_r.jpg" alt=""></td>
+					</tr>
+				</table>
+				<table class="tab2">
+					<tr>
+						<td><img class="prev" src="img/page5/arrow_l.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="qcz" /><img src="img/page5/s_qcz.jpg" alt=""></td>		
+						<td><input type="radio" name="title2" value="cxj" /><img src="img/page5/s_cxj.jpg" alt=""></td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="title2" value="szs" /><img src="img/page5/s_szs.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="tgk" /><img src="img/page5/s_tgk.jpg" alt=""></td>
+						<td><img class="next" src="img/page5/arrow_r.jpg" alt=""></td>
+					</tr>
+				</table>
+				<table class="tab3">
+					<tr>
+						<td><img class="prev" src="img/page5/arrow_l.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="wan" /><img src="img/page5/s_wan.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="xxn" /><img src="img/page5/s_xxn.jpg" alt=""></td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="title2" value="ynw" /><img src="img/page5/s_ynw.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="yxf" /><img src="img/page5/s_yxf.jpg" alt=""></td>
+						<td><img class="next" src="img/page5/arrow_r.jpg" alt=""></td>					
+					</tr>
+				</table>
+				<table class="tab4">
+					<tr>
+						<td><img class="prev" src="img/page5/arrow_l.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="zqc" /><img src="img/page5/s_zqc.jpg" alt=""></td>
+						<td><input type="radio" name="title2" value="zye" /><img src="img/page5/s_zye.jpg" alt=""></td>		
+					</tr>
+				</table>
+				<div class="inputarea">
+					<textarea rows="1" maxlength="3" name="title" class="titlearea"></textarea>
+					<textarea rows="2" maxlength="36" name="content" class="contentarea"></textarea>
+					<input class="finish" onclick="_smq.push(['custom','Page-2','完成2']);" type="button" value="完成">
+				</div>
+				<div class="upload" onclick="_smq.push(['custom','Page-2','上传自己的照片']);" id="filePicker"></div>
+				<input class="drawimg" onclick="_smq.push(['custom','Page-2','完成']);" type="button">
+				<!-- <input class="test" type="file" onchange="javascript:setImagePreview(this);"> -->
+			</div>
 
-        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="js/queryloader2.min.js" type="text/javascript"></script>
+		</div>
+		<div class="page page6">
+			<img class="smallpic2" src="" alt="">
+			<img class="smallpic" src="" alt="">
+			<div class="container">
+				<canvas id="can" width="640" height="640"></canvas>
+				<img class="bottom" src="img/page6/bottom.jpg" alt="">
+			</div>
+			<img class="dashed" src="img/page6/dashed.png" alt="">
+			<div class="detail">
+				<p class="t1">私人订制的臻情卡片将融入礼盒，传递你的至臻心意</p>
+				<img src="img/page6/detail.png" alt="">
+				<a href="https://detail.tmall.com/item.htm?id=13696866725" class="giftdetail" onclick="_smq.push(['custom','Page-3','查看礼盒详情']);" target="_blank"></a>
+				<a class="shareposter" onclick="_smq.push(['custom','Page-3','分享海报']);" href="javascript:;"></a>
+				<a class="buy" href="javascript:alert('过年了，\n车，马，礼都慢， \n臻情礼盒，年后继续为你定制。')"></a>
+				<!-- <a class="buy" href="javascript:;" onclick="_smq.push(['custom','Page-3','购买这款礼盒']);showOverlay();"></a> -->
+			</div>
+		</div>
+		<div class="page page7">
+			<div class="poster">
+				<a class="prev" href="javascript:;"></a>
+				<a class="next" href="javascript:;"></a>
+				<img src="img/page7/kv05.jpg" alt="">
+			</div>
+			<a class="zqdzbtn" href="javascript:;" onclick="_smq.push(['custom','Page-4','订制这款礼盒']);"><img src="img/page7/BTN.png" alt=""></a>
+			<div class="btm">
+				<div class="chooseimg" onclick="_smq.push(['custom','Page-4','选择图片']);">
+					<img data-img="kv01" src="img/page7/b1.jpg" alt="">
+					<img data-img="kv02" src="img/page7/b2.jpg" alt="">
+					<img data-img="kv03" src="img/page7/b3.jpg" alt="">
+					<img data-img="kv04" src="img/page7/b4.jpg" alt="">
+					<img data-img="kv05" class="selected" src="img/page7/b5.jpg" alt="">
+					<img data-img="kv06" src="img/page7/b6.jpg" alt="">
+					<img data-img="kv07" src="img/page7/b7.jpg" alt="">
+					<img data-img="kv08" src="img/page7/b8.jpg" alt="">
+					<img data-img="kv09" src="img/page7/b9.jpg" alt="">
+					<img data-img="kv10" src="img/page7/b10.jpg" alt="">
+					<img data-img="kv11" src="img/page7/b11.jpg" alt="">
+					<img data-img="kv12" src="img/page7/b12.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="ft-inner">
+			<div class="ft-contact ft-list">
+				<h3>联系我们</h3>
+				<ul>
+					<li>- 消费者服务电话：400-880-6266</li>
+					<li>- 电子邮件：<a href="mailto:rocherinfo.cn@ferrero.com">rocherinfo.cn@ferrero.com</a></li>
+				</ul>
+			</div>
+			<div class="ft-sitemap ft-list">
+				<h3>网站地图</h3>
+				<ul>
+					<li><a href="http://www.ferrero-praline.com.cn/creations">- 意式创艺</a></li>
+					<li><a href="http://www.ferrero-praline.com.cn/gifting">- 至臻礼遇</a></li>
+					<li><a href="http://www.ferrero-praline.com.cn/passion">- 美味传奇</a></li>
+					<li><a href="http://www.ferrero-praline.com.cn/italian">- 意式风情</a></li>
+					<li><a href="http://www.ferrero-praline.com.cn/wedding">- 金色婚礼</a></li>
+				</ul>
+			</div>
+			<div class="ft-discovery ft-list">
+				<h3>关注费列罗</h3>
+				<ul>
+					<li><a href="http://weibo.com/ferrerotiamo" class="weibo" target="_blank">新浪微博</a></li>
+					<li><a href="javascript:;" class="wechat">微信</a></li>
+				</ul>
+				<a href="http://www.ferrero-praline.com.cn/legal" class="ft-law">法律条款</a>
+			</div>
+		</div>
+		<div class="ft-info">
+			<ul>
+				<li>© Ferrero 2011-2015</li>
+				<li><a href="http://www.ferrero-praline.com.cn" target="_blank">www.ferrero-praline.com.cn</a></li>
+				<li>沪ICP备14032557号-13</li>
+			</ul>
+		</div>
+	</div>
+	<div class="cut">
+		<div class="image-editor">			
+			<div class="cropit-image-preview"></div>
+			<input type="file" class="cropit-image-input">
+			<input type="range" class="cropit-image-zoom-input">
+			<p class="t2">滑动调整图片大小</p>
+			<a class="cutfinish" href="javascript:;">
+				<button class="export">Export</button>			
+			</a>
+		</div>
+	</div>
+	<div class="navi">
+		<img src="img/navi.png" alt="">
+		<a class="nav1" href="javascript:;" onclick="_smq.push(['custom','Page-1','右侧导航栏_首页']);"></a>
+		<a class="nav2" href="javascript:;" onclick="_smq.push(['custom','Page-1','右侧导航栏_订制']);"></a>
+		<a class="nav3" href="javascript:;" onclick="_smq.push(['custom','Page-1','右侧导航栏_观赏海报']);
+		"></a>
+		<a class="nav4" href="javascript:;" onclick="_smq.push(['custom','Page-1','右侧导航栏_手机按钮']);"></a>
+		<a class="nav5" href="javascript:;" onclick="_smq.push(['custom','Page-1','右侧导航栏_分享按钮']);"></a>
+	</div>
+	<img class="qr" src="img/QR.png" alt="">
+	<div id="overlay">
+	</div>
+	<div id="tmall">
+		<a class="close" href="javascript:hideOverlay();"></a>
+		<p id="tcode"></p>
+		<a href="javascript:;" class="copy"></a>
+		<a href="https://detail.tmall.com/item.htm?id=13696866725" class="buy" target="_blank"></a>
+	</div>
+	<div id="phone">
+		<a class="close" href="javascript:hideOverlay();"></a>
+		<textarea name="enter" id="enter" cols="1" rows="1" maxlength="11"></textarea>
+		<input type="submit" class="send">
+	</div>
+</body>
+<script type="text/javascript">
+	var _smq = _smq || [];
 
-        <script>
-            $(document).ready(function() {
-                $("body").queryLoader2({
-                    barColor: '#efefef',
-                    backgroundColor: '#111',
-                    percentage: true,
-                    barHeight: 0,
-                    deepSearch:true,
-                    minimumTime: 909300,
-                    fadeOutTime: 1000,
-                    onProgress  :function(){
-                        $("#qLoverlay").css('background', 'url(images/preload/bg.jpg)');
-                    }
-                });
-            });
-        </script>
-    </head>
+	_smq.push(['_setAccount', '2417534', new Date()]);
+	_smq.push(['pageview']);
 
-    <body>
-        <div id="content">
-            <h1>QueryLoader v2 demo page</h1>
-
-            <p>
-            	This was a simple demo of what QueryLoader2 does: Giving a simple loading overlay
-            	before showing the webpage.
-            </p>
-
-            <p>
-            	<a href="http://www.gayadesign.com/diy/queryloader2-preload-your-images-with-ease/">
-            		Go back to the post
-            	</a>
-            </p>
-
-            <ul>
-                <li>
-                    <img src="images/Dali_Swans_Reflecting_Elephants.jpg" alt="" />
-                </li>
-                <li>
-                    <img src="images/hokusai_1680_1050.jpg" alt="" />
-                </li>
-                <li class="baizley">
-                </li>
-                <li class="gradient">
-                    Gradient test
-                </li>
-                <li>
-                    Non existant
-                    <img src="images/404nonexistant.jpg" alt="" />
-                </li>
-            </ul>
-        </div>
-
-    </body>
+	(function() {
+		var sm = document.createElement('script'); sm.type = 'text/javascript'; sm.async = true;
+		sm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdnmaster.com/sitemaster/collect.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sm, s);
+	})();
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/webupload/webuploader.js"></script>
+<script type="text/javascript" src="js/html5shiv.min.js"></script>
+<script type="text/javascript" src="js/common-pc.js"></script>
+<script src="js/excanvas.js"></script>
+<script src="js/jquery.rotate.min.js"></script>
+<script src="js/jquery.cropit.js"></script>
+<script type="text/javascript" src="js/jquery.event.ue.js"></script>
+<script src="js/jquery.udraggable.js"></script>
+<script type="text/javascript" src="js/zclip/jquery.zclip.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
