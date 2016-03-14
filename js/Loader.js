@@ -32,7 +32,7 @@ function Loader() {
                         success(); 
                     }
                 };
-                img.src ="img/" + imgArray[i];
+                img.src ="images/" + imgArray[i];
             } else {
                 this.loadMusic(imgArray[i]);
             }
@@ -86,7 +86,7 @@ function Loader() {
         img.onerror = function() {
             obj.Loading(imgArray, obj.success);
         };
-        img.src = "img/"+imgArray[0];
+        img.src = "images/"+imgArray[0];
     };
 };
 
@@ -102,7 +102,7 @@ $(function(){
     var loader = new Loader();
     loader.loadLoading(imgArray, loader);
     // if (is_weixin()) {
-    //     $(".pannel6 .sharebtn").css({"background":"url(img/sharebtnwx.png) no-repeat center","background-size":"100% 100%","width":"3.4rem","height":"0.54rem","margin-left":"-1.7rem"});
+    //     $(".pannel6 .sharebtn").css({"background":"url(images/sharebtnwx.png) no-repeat center","background-size":"100% 100%","width":"3.4rem","height":"0.54rem","margin-left":"-1.7rem"});
     // };
     $(document).one('touchstart', function (e) {
         autoPlayMusic();
