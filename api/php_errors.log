@@ -1,3 +1,0 @@
-[11-Dec-2015 16:30:59 Asia/Chongqing] PHP Parse error:  syntax error, unexpected '.10' (T_DNUMBER) in /home/webown/sites/sha-ferror-ccp/api/dbconfig.php on line 12
-[11-Dec-2015 16:30:59 Asia/Chongqing] PHP Stack trace:
-[11-Dec-2015 16:30:59 Asia/Chongqing] PHP   1. {main}() /home/webown/sites/sha-ferror-ccp/api/index2.php:0
