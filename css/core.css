@@ -58,17 +58,32 @@ html, body {
 	font-family: Microsoft YaHei, Arial, sans-serif;
 	background: url(../images/preload/bg.jpg) no-repeat;
 	background-size: 100% 100%;
+	overflow: hidden;
 }
 img {
 	display: block;
 	border: none;
 	width: 100%;
 }
+.swiper-pagination {
+	visibility: hidden;
+}
+.swiper-container {
+	width: 100%;
+	height: 100%;
+	transition: transform 0.5s;
+}
+.toright .swiper-container {
+	transform: translateX(4.7rem);
+}
 .loading {
 	width: 100%;
 	height: 100%;
 	position: relative;
 	text-align: center;
+	background: #fff;
+	background-size: 100% 100%;
+	z-index: 999;
 }
 .loading .loadimg {
 	display: block;
@@ -85,8 +100,11 @@ img {
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: block;
+	display: none;
 	z-index: 1;
+}
+.loading .loadimg .active {
+	display:block;
 }
 .loading .count {
 	display: block;
@@ -105,38 +123,52 @@ img {
 	width: 0.6rem;
 	color: rgb(98, 43, 24);
 }
-.menu {
+#menu {
 	background: url(../images/menu.jpg) no-repeat;
 	background-size: 100% 100%;
 	width: 4.7rem;
-	position: absolute;
-	left: -4.7rem;
+	position: fixed;
 	top: 0;
 	bottom: 0;
-	transition: all 0.25s;
+	left: 0;
+	z-index: 2;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	visibility: hidden;
+	transform: translateX(-100%);
 }
-.menu  .logo {
+.toright #menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transform: translateX(0);
+	transition: transform 0.5s;
+}
+#menu  .logo {
 	position: absolute;
 	left: 0.5rem;
 	top: 0.44rem;
 	width: 1.63rem;
 }
-.menu  .btn {
+#menu  #btn {
 	position: absolute;
 	left: 4.67rem;
 	top: 0.28rem;
 	width: 0.57rem;
+	visibility: visible;
 }
-#tm:checked ~ .menu {
-	transform: translateX(4.7rem);
+.swiper-slide-active .title {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
-.s1 .t1 {
+.s1 .title {
 	position: absolute;
 	left: 1.35rem;
 	top: 0.6rem;
-	font-size: 0.45rem;
-	color: #733521;
-	margin: 0;
+	width: 3.96rem;
 }
 .s1 .banner {
 	position: absolute;
@@ -154,29 +186,1850 @@ img {
 	position: absolute;
 }
 .s1 .b1 {
-	top: 1.3rem;
+	top: 1.6rem;
 }
 .s1 .b1 p {
 	left: 0.48rem;
+}
+.s1.swiper-slide-active .b1 p {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 .s1 .b1 img {
 	margin-left: 1.64rem;
 }
 .s1 .b2 {
-	top: 3.85rem;
+	top: 4.15rem;
 }
 .s1 .b2 p {
 	left: 5.33rem;
+}
+.s1.swiper-slide-active .b2 p {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 .s1 .b2 img {
 	margin-left: -1.26rem;
 }
 .s1 .b3 {
-	top: 6.4rem;
+	top: 6.7rem;
 }
 .s1 .b3 p {
 	left: 0.48rem;
 }
+.s1.swiper-slide-active .b3 p {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
 .s1 .b3 img {
 	margin-left: 1.64rem;
+}
+.s2 .b1 {
+	position: absolute;
+	top: 1.3rem;
+	left: 0;
+}
+.s2 .line {
+	position: absolute;
+	width: 0;
+	left: 0.72rem;
+	top: 3.48rem;
+	overflow: hidden;
+}
+.s2.swiper-slide-active .line {
+	width: 5.47rem;
+	transition: width 3s 1s;
+}
+.s2 .line img {
+	width: 5.47rem;
+}
+.s2 .title {
+	position: absolute;
+	left: 1.75rem;
+	top: 0.6rem;
+	width: 3.22rem;
+}
+.s2 .t2 {
+	position: absolute;
+	top: 6.23rem;
+	width: 100%;
+	font-size: 0.4rem;
+	color: #a73c0f;
+	text-align: center;
+}
+.s2.swiper-slide-active .t2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s3 {
+	background: url(../images/s3/pic1.jpg) no-repeat;
+	background-size: cover;
+}
+.s3 .title {
+	position: absolute;
+	left: 1.85rem;
+	top: 0.6rem;
+	width: 2.86rem;
+}
+.s3 .w1 {
+	position: absolute;
+	width: 2.13rem;
+	left: 3.9rem;
+	top: 2.8rem;
+}
+.s3 .w2 {
+	position: absolute;
+	width: 2.13rem;
+	left: 3.9rem;
+	top: 3.9rem;
+}
+.s3 .w3 {
+	position: absolute;
+	width: 2.13rem;
+	left: 3.9rem;
+	top: 5rem;
+}
+.s3 .w4 {
+	position: absolute;
+	width: 2.13rem;
+	left: 3.9rem;
+	top: 6.2rem;
+}
+.s3.swiper-slide-active .w1 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s3.swiper-slide-active .w2 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s3.swiper-slide-active .w3 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s3.swiper-slide-active .w4 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-delay: 4s;
+	animation-delay: 4s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4 .title {
+	position: absolute;
+	left: 2.35rem;
+	top: 0.6rem;
+	width: 1.93rem;
+}
+.s4 .b1 {
+	position: absolute;
+	top: 1.7rem;
+	width: 8.42rem;
+	transition: transform 1s;
+}
+.s4 .b1right {
+	transform: translateX(-2rem);
+}
+.s4 .slider {
+	position: absolute;
+	top: 8.4rem;
+	left: 0.54rem;
+	width: 5.24rem;
+}
+.s4 .ball {
+	position: absolute;
+	top: 8.4rem;
+	left: 0.7rem;
+	width: 0.25rem;
+	transition: transform 1s;
+}
+.s4 .ballright {
+	transform: translateX(5rem);
+}
+.s4 .t2 {
+	position: absolute;
+	left: 1.85rem;
+	top: 5.65rem;
+	color: #5c3229;
+	font-size: 0.31rem;
+}
+.s4 .t3 {
+	position: absolute;
+	left: 4.55rem;
+	top: 5.65rem;
+	color: #a23d13;
+	font-size: 0.31rem;
+}
+.s4 .t4 {
+	position: absolute;
+	left: 6.9rem;
+	top: 5.65rem;
+	color: #5c3229;
+	font-size: 0.31rem;
+}
+.s4 .t5 {
+	position: absolute;
+	left: 4.4rem;
+	top: 4.3rem;
+	color: #b15e39;
+	font-size: 0.23rem;
+}
+.s4 .t6 {
+	position: absolute;
+	left: 4.4rem;
+	top: 2.85rem;
+	color: #b15e39;
+	font-size: 0.23rem;
+}
+.s4 .t7 {
+	position: absolute;
+	left: 4.4rem;
+	top: 1.43rem;
+	color: #b15e39;
+	font-size: 0.23rem;
+}
+.s4 .logo1 {
+	position: absolute;
+	left: 1.5rem;
+	top: 1.35rem;
+	width: 0.59rem;
+}
+.s4 .logo2 {
+	position: absolute;
+	left: 2.4rem;
+	top: 1.3rem;
+	width: 0.85rem;
+}
+.s4 .logo3 {
+	position: absolute;
+	left: 5.7rem;
+	top: 1.27rem;
+	width: 0.7rem;
+}
+.s4 .logo4 {
+	position: absolute;
+	left: 6.96rem;
+	top: 1.33rem;
+	width: 0.44rem;
+}
+.s4 .logo5 {
+	position: absolute;
+	left: 2.3rem;
+	top: 2.9rem;
+	width: 1.09rem;
+}
+.s4 .logo6 {
+	position: absolute;
+	left: 3.48rem;
+	top: 2.86rem;
+	width: 0.8rem;
+}
+.s4 .logo7 {
+	position: absolute;
+	left: 1.21rem;
+	top: 2.75rem;
+	width: 0.91rem;
+}
+.s4 .logo8 {
+	position: absolute;
+	left: 2.36rem;
+	top: 4.28rem;
+	width: 0.91rem;
+}
+.s4 .logo9 {
+	position: absolute;
+	left: 1.67rem;
+	top: 4.2rem;
+	width: 0.52rem;
+}
+.s4 .logo10 {
+	position: absolute;
+	left: 5.71rem;
+	top: 4.3rem;
+	width: 1.02rem;
+}
+.s4 .logo11 {
+	position: absolute;
+	left: 5.98rem;
+	top: 2.22rem;
+	width: 1.95rem;
+}
+.s4 .logo12 {
+	position: absolute;
+	left: 0.4rem;
+	top: 4.3rem;
+	width: 0.94rem;
+}
+.s4 .logo13 {
+	position: absolute;
+	left: 3.48rem;
+	top: 4.3rem;
+	width: 0.72rem;
+}
+.s4.swiper-slide-active .t5 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .t6 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .t7 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3.4s;
+	animation-delay: 3.4s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo3 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo4 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 2.8s;
+	animation-delay: 2.8s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo5 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3.1s;
+	animation-delay: 3.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo6 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo7 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo8 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 2.8s;
+	animation-delay: 2.8s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo9 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3.3s;
+	animation-delay: 3.3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo10 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3.7s;
+	animation-delay: 3.7s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo11 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo12 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4.swiper-slide-active .logo13 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.s4 .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+.s4 .mask .t8 {
+	position: absolute;
+	left: 0.85rem;
+	top: 4.3rem;
+	font-size: 0.4rem;
+	color: #f3e1cb;
+	line-height: 0.5rem;
+}
+.s4 .mask .ud {
+	position: absolute;
+	left: 3.9rem;
+	top: 3.85rem;
+	width: 2.15rem;
+}
+.s4 .mask .wave {
+	position: absolute;
+	left: 3.73rem;
+	top: 3.69rem;
+	width: 2.47rem;
+	-webkit-animation: wave 1s infinite;
+	animation: wave 1s infinite;
+}
+@-webkit-keyframes wave {
+	from {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.7;
+		-webkit-transform: scale(0.85);
+		transform: scale(0.85);
+	}
+	to {
+		-webkit-transform: scale(0.85);
+	}
+}
+@keyframes wave {
+	from {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.7;
+		-webkit-transform: scale(0.85);
+		transform: scale(0.85);
+	}
+	to {
+		transform: scale(0.85);
+	}
+}
+.s4 .mask video {
+	width: 6rem;
+	position: absolute;
+	top: 3rem;
+	left: 0.2rem;
+	display: none;
+}
+.s4 .mask .t9 {
+	position: absolute;
+	left: 4.5rem;
+	top: 1.3rem;
+	font-size: 0.4rem;
+	color: #f3e1cb;
+}
+
+/* 产品 */
+.product1 {
+	background: url(../images/pro1/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.product1 .title {
+	position: absolute;
+	left: 0.9rem;
+	top: 0.6rem;
+	width: 5.03rem;
+}
+.product1 .circle {
+	position: absolute;
+	left: 1.1rem;
+	top: 2.29rem;
+	width: 4.7rem;
+}
+.product1 .outer {
+	position: absolute;
+	left: 1rem;
+	top: 2.19rem;
+	width: 4.9rem;
+	height: 4.9rem;
+	transform: rotate(360deg);
+	clip: rect(0, 2.45rem, 4.9rem, 0);
+	border-radius: 2.45rem;
+	background: url(../images/pro1/outer2.jpg) no-repeat;
+	background-size: cover;
+}
+.product1 .outer2 {
+	position: absolute;
+	left: 1rem;
+	top: 2.19rem;
+	width: 4.9rem;
+	height: 4.9rem;
+	transform: rotate(180deg);
+	clip: rect(0, 2.45rem, 4.9rem, 0);
+	border-radius: 2.45rem;
+	background: url(../images/pro1/outer2.jpg) no-repeat;
+	background-size: cover;
+}
+.product1 .outer3 {
+	position: absolute;
+	left: 3.45rem;
+	top: 2.185rem;
+	width: 2.45rem;
+	height: 4.9rem;
+	visibility: hidden;
+}
+.product1.swiper-slide-active .outer {
+	animation: outer 0.5s 2.5s both linear;
+	-webkit-animation: outer 0.5s 1.5s both linear;
+}
+.product1.swiper-slide-active .outer2 {
+	animation: outer2 1s 2s both linear;
+	-webkit-animation: outer2 1s 1s both linear;
+}
+.product1.swiper-slide-active .outer3 {
+	animation: outer3 1s 2s forwards;
+	-webkit-animation: outer3 1s 1s forwards;
+}
+@-webkit-keyframes outer {
+	from {
+		-webkit-transform: rotate(360deg);
+	}
+	to {
+		-webkit-transform: rotate(540deg);
+	}
+}
+@keyframes outer {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(540deg);
+	}
+}
+@-webkit-keyframes outer2 {
+	from {
+		-webkit-transform: rotate(180deg);
+	}
+	to {
+		-webkit-transform: rotate(540deg);
+	}
+}
+@keyframes outer2 {
+	from {
+		transform: rotate(180deg);
+	}
+	to {
+		transform: rotate(540deg);
+	}
+}
+@-webkit-keyframes outer3 {
+	0% {
+		visibility: hidden;
+	}
+	43% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
+}
+@keyframes outer3 {
+	0% {
+		visibility: hidden;
+	}
+	43% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
+}
+.product2 {
+	background: url(../images/pro2/pic1.jpg) no-repeat;
+	background-size: cover;
+}
+.product2 .title {
+	position: absolute;
+	left: 1.9rem;
+	top: 0.6rem;
+	width: 2.71rem;
+}
+.product2 .b1 {
+	position: absolute;
+	left: 0.23rem;
+	top: 4.42rem;
+	width: 1.47rem;
+}
+.product2.swiper-slide-active .b1, .product2.swiper-slide-active .b2, .product2.swiper-slide-active .b3, .product2.swiper-slide-active .b4, .product2.swiper-slide-active .b5 {
+	-webkit-animation-name: fadeInUp2;
+	animation-name: fadeInUp2;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.product2.swiper-slide-active .b1 {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product2.swiper-slide-active .b2 {
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+.product2.swiper-slide-active .b3 {
+	-webkit-animation-delay: 1.4s;
+	animation-delay: 1.4s;
+}
+.product2.swiper-slide-active .b4 {
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+.product2.swiper-slide-active .b5 {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product2.swiper-slide-active .flower {
+	-webkit-animation-name: fadeInUp3;
+	animation-name: fadeInUp3;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product2.swiper-slide-active .icon {
+	-webkit-animation-name: fadeInUp3;
+	animation-name: fadeInUp3;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product2.swiper-slide-active .material {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product2 .b2 {
+	position: absolute;
+	left: 1.15rem;
+	top: 4.6rem;
+	width: 1.78rem;
+}
+.product2 .b3 {
+	position: absolute;
+	left: 2.29rem;
+	top: 4.75rem;
+	width: 1.96rem;
+}
+.product2 .b4 {
+	position: absolute;
+	left: 3.53rem;
+	top: 4.59rem;
+	width: 1.77rem;
+}
+.product2 .b5 {
+	position: absolute;
+	left: 4.83rem;
+	top: 4.53rem;
+	width: 1.44rem;
+}
+.product2 .flower {
+	position: absolute;
+	left: 0;
+	top: 2rem;
+	width: 6.4rem;
+}
+.product2 .icon {
+	position: absolute;
+	left: 2.6rem;
+	top: 2.3rem;
+	width: 1.68rem;
+}
+.product2 .material {
+	position: absolute;
+	left: 0;
+	top: 7.1rem;
+	width: 6.4rem;
+}
+@-webkit-keyframes fadeInUp2 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 20%, 0);
+		transform: translate3d(0, 20%, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInUp2 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 20%, 0);
+		transform: translate3d(0, 20%, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@-webkit-keyframes fadeInUp3 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 20%, 0);
+		transform: translate3d(0, 20%, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInUp3 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 5%, 0);
+		transform: translate3d(0, 5%, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@-webkit-keyframes fadeInLeft2 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-40%, 0, 0);
+		transform: translate3d(-40%, 0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInLeft2 {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-40%, 0, 0);
+		transform: translate3d(-40%, 0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+.product3 {
+	background: url(../images/pro3/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.product3 .title {
+	position: absolute;
+	left: 2rem;
+	top: 0.6rem;
+	width: 2.82rem;
+}
+.product3 .product {
+	position: absolute;
+	left: 1rem;
+	top: 4rem;
+	width: 2.1rem;
+}
+.product3.swiper-slide-active .product {
+	-webkit-animation-name: fadeInLeft2;
+	animation-name: fadeInLeft2;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product3 .pic1 {
+	position: absolute;
+	right: 0;
+	top: 2.6rem;
+	width: 3rem;
+}
+.product3 .pic2 {
+	position: absolute;
+	right: 0;
+	top: 5rem;
+	width: 3rem;
+}
+.product3.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.product3.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product3 .detailbtn {
+	position: absolute;
+	left: 2.24rem;
+	bottom: 1rem;
+	width: 1.91rem;
+}
+.product3.swiper-slide-active .detailbtn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product3 .suit {
+	position: absolute;
+	right: 0.1rem;
+	top: 7.33rem;
+	width: 2.83rem;
+	font-size: 0.37rem;
+	color: #733521;
+	text-align: right;
+	line-height: 0.45rem;
+}
+.product3.swiper-slide-active .suit {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product3 .popup {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+.product3 .popup .detail {
+	position: absolute;
+	left: 0.27rem;
+	top: 1.2rem;
+	width: 5.86rem;
+}
+.product3 .popup .close {
+	position: absolute;
+	left: 5.6rem;
+	top: 1.2rem;
+	width: 0.55rem;
+	height: 0.55rem;
+}
+.product4 {
+	background: url(../images/pro4/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.product4 .title {
+	position: absolute;
+	left: 2rem;
+	top: 0.6rem;
+	width: 2.82rem;
+}
+.product4 .product {
+	position: absolute;
+	left: 1rem;
+	top: 4rem;
+	width: 2.1rem;
+}
+.product4.swiper-slide-active .product {
+	-webkit-animation-name: fadeInLeft2;
+	animation-name: fadeInLeft2;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product4 .pic1 {
+	position: absolute;
+	right: 0;
+	top: 2.6rem;
+	width: 3rem;
+}
+.product4 .pic2 {
+	position: absolute;
+	right: 0;
+	top: 5rem;
+	width: 3rem;
+}
+.product4.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.product4.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product4 .detailbtn {
+	position: absolute;
+	left: 2.24rem;
+	bottom: 1rem;
+	width: 1.91rem;
+}
+.product4.swiper-slide-active .detailbtn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product4 .suit {
+	position: absolute;
+	right: 0.1rem;
+	top: 7.33rem;
+	width: 2.83rem;
+	font-size: 0.37rem;
+	color: #733521;
+	text-align: right;
+	line-height: 0.45rem;
+}
+.product4.swiper-slide-active .suit {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product4 .popup {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+.product4 .popup .detail {
+	position: absolute;
+	left: 0.27rem;
+	top: 1.2rem;
+	width: 5.86rem;
+}
+.product4 .popup .close {
+	position: absolute;
+	left: 5.6rem;
+	top: 1.2rem;
+	width: 0.55rem;
+	height: 0.55rem;
+}
+.product5 {
+	background: url(../images/pro5/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.product5 .title {
+	position: absolute;
+	left: 2rem;
+	top: 0.6rem;
+	width: 2.82rem;
+}
+.product5 .product {
+	position: absolute;
+	left: 1rem;
+	top: 4rem;
+	width: 2.1rem;
+}
+.product5.swiper-slide-active .product {
+	-webkit-animation-name: fadeInLeft2;
+	animation-name: fadeInLeft2;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product5 .pic1 {
+	position: absolute;
+	right: 0;
+	top: 2rem;
+	width: 3rem;
+}
+.product5 .pic2 {
+	position: absolute;
+	right: 0;
+	top: 4rem;
+	width: 3rem;
+}
+.product5 .pic3 {
+	position: absolute;
+	right: 0;
+	top: 6rem;
+	width: 3rem;
+}
+.product5.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.product5.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product5.swiper-slide-active .pic3 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product5 .detailbtn {
+	position: absolute;
+	left: 2.24rem;
+	bottom: 1rem;
+	width: 1.91rem;
+}
+.product5.swiper-slide-active .detailbtn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product5 .suit {
+	position: absolute;
+	right: 0.1rem;
+	top: 8.33rem;
+	width: 2.83rem;
+	font-size: 0.37rem;
+	color: #733521;
+	text-align: right;
+	line-height: 0.45rem;
+}
+.product5.swiper-slide-active .suit {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product5 .popup {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+.product5 .popup .detail {
+	position: absolute;
+	left: 0.27rem;
+	top: 1.2rem;
+	width: 5.86rem;
+}
+.product5 .popup .close {
+	position: absolute;
+	left: 5.6rem;
+	top: 1.2rem;
+	width: 0.55rem;
+	height: 0.55rem;
+}
+.product6 {
+	background: url(../images/pro6/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.product6 .title {
+	position: absolute;
+	left: 2rem;
+	top: 0.6rem;
+	width: 2.82rem;
+}
+.product6 .product {
+	position: absolute;
+	left: 1rem;
+	top: 4rem;
+	width: 2.1rem;
+}
+.product6.swiper-slide-active .product {
+	-webkit-animation-name: fadeInLeft2;
+	animation-name: fadeInLeft2;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product6 .pic1 {
+	position: absolute;
+	right: 0;
+	top: 2.6rem;
+	width: 3rem;
+}
+.product6 .pic2 {
+	position: absolute;
+	right: 0;
+	top: 5rem;
+	width: 3rem;
+}
+.product6.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.product6.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product6 .detailbtn {
+	position: absolute;
+	left: 2.24rem;
+	bottom: 1rem;
+	width: 1.91rem;
+}
+.product6.swiper-slide-active .detailbtn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product6 .suit {
+	position: absolute;
+	right: 0.1rem;
+	top: 7.33rem;
+	width: 2.83rem;
+	font-size: 0.37rem;
+	color: #733521;
+	text-align: right;
+	line-height: 0.45rem;
+}
+.product6.swiper-slide-active .suit {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product6 .popup {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+.product6 .popup .detail {
+	position: absolute;
+	left: 0.27rem;
+	top: 1.2rem;
+	width: 5.86rem;
+}
+.product6 .popup .close {
+	position: absolute;
+	left: 5.6rem;
+	top: 1.2rem;
+	width: 0.55rem;
+	height: 0.55rem;
+}
+.product7 {
+	background: url(../images/pro7/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.product7 .title {
+	position: absolute;
+	left: 2rem;
+	top: 0.6rem;
+	width: 2.82rem;
+}
+.product7 .product {
+	position: absolute;
+	left: 1rem;
+	top: 4rem;
+	width: 2.1rem;
+}
+.product7.swiper-slide-active .product {
+	-webkit-animation-name: fadeInLeft2;
+	animation-name: fadeInLeft2;
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product7 .pic1 {
+	position: absolute;
+	right: 0;
+	top: 2.6rem;
+	width: 3rem;
+}
+.product7 .pic2 {
+	position: absolute;
+	right: 0;
+	top: 5rem;
+	width: 3rem;
+}
+.product7.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.product7.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product7 .detailbtn {
+	position: absolute;
+	left: 2.24rem;
+	bottom: 1rem;
+	width: 1.91rem;
+}
+.product7.swiper-slide-active .detailbtn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product7 .suit {
+	position: absolute;
+	right: 0.1rem;
+	top: 7.33rem;
+	width: 2.83rem;
+	font-size: 0.37rem;
+	color: #733521;
+	text-align: right;
+	line-height: 0.45rem;
+}
+.product7.swiper-slide-active .suit {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product7 .popup {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	display: none;
+}
+.product7 .popup .detail {
+	position: absolute;
+	left: 0.27rem;
+	top: 1.2rem;
+	width: 5.86rem;
+}
+.product7 .popup .close {
+	position: absolute;
+	left: 5.6rem;
+	top: 1.2rem;
+	width: 0.55rem;
+	height: 0.55rem;
+}
+.product8,.product9,.product10,.product11,.product12,.product13,.product14,.product15,.product16 {
+	background: url(../images/pro8/bg.jpg) no-repeat;
+	background-size: cover;
+}
+.product8 .title {
+	position: absolute;
+	left: 1.85rem;
+	top: 0.6rem;
+	width: 2.86rem;
+}
+.product8 .pic1 {
+	position: absolute;
+	left: 2.3rem;
+	top: 2.6rem;
+	width: 1.92rem;
+}
+.product8 .pic2 {
+	position: absolute;
+	left: 1.4rem;
+	top: 6.5rem;
+	width: 3.77rem;
+}
+.product8.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+.product8.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+.product9 .title {
+	position: absolute;
+	left: 1.35rem;
+	top: 0.6rem;
+	width: 3.91rem;
+}
+.product9 .pic1 {
+	position: absolute;
+	left: 1.09rem;
+	top: 2.57rem;
+	width: 4.18rem;
+}
+.product9.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product9 .pic2 {
+	position: absolute;
+	left: 0.47rem;
+	top: 4.5rem;
+	width: 5.53rem;
+}
+.product9.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+.product9 .btns {
+	position: absolute;
+	left: 2.85rem;
+	top: 8.64rem;
+	width: 0.74rem;
+}
+.product10 .title {
+	position: absolute;
+	left: 1.35rem;
+	top: 0.6rem;
+	width: 3.91rem;
+}
+.product10 .pic1 {
+	position: absolute;
+	left: 1.09rem;
+	top: 2.57rem;
+	width: 4.45rem;
+}
+.product10.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product10 .pic2 {
+	position: absolute;
+	left: 2rem;
+	top: 4.3rem;
+	width: 2.55rem;
+}
+.product10.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+.product10 .btns {
+	position: absolute;
+	left: 2.85rem;
+	top: 8.64rem;
+	width: 0.74rem;
+}
+.product11 .title {
+	position: absolute;
+	left: 1.35rem;
+	top: 0.6rem;
+	width: 3.91rem;
+}
+.product11 .pic1 {
+	position: absolute;
+	left: 1.5rem;
+	top: 2.57rem;
+	width: 3.6rem;
+}
+.product11.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product11 .pic2 {
+	position: absolute;
+	left: 0.5rem;
+	top: 4rem;
+	width: 5.56rem;
+}
+.product11.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+.product11 .btns {
+	position: absolute;
+	left: 2.85rem;
+	top: 8.64rem;
+	width: 0.74rem;
+}
+.product12 .title {
+	position: absolute;
+	left: 1.75rem;
+	top: 0.6rem;
+	width: 2.91rem;
+}
+.product12 .pic1 {
+	position: absolute;
+	left: 0.7rem;
+	top: 2rem;
+	width: 5.12rem;
+}
+.product12.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product12 .pic2 {
+	position: absolute;
+	left: 1.7rem;
+	top: 7.5rem;
+	width: 3.22rem;
+}
+.product12.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.product13 .title {
+	position: absolute;
+	left: 1.75rem;
+	top: 0.6rem;
+	width: 3.44rem;
+}
+.product13 .pic1 {
+	position: absolute;
+	left: 1.5rem;
+	top: 2rem;
+	width: 3.8rem;
+}
+.product13.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product13 .pic2 {
+	position: absolute;
+	left: 1.7rem;
+	top: 4rem;
+	width: 3.28rem;
+}
+.product13.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.product14 .title {
+	position: absolute;
+	left: 1.75rem;
+	top: 0.6rem;
+	width: 3.45rem;
+}
+.product14 .pic1 {
+	position: absolute;
+	left: 1.9rem;
+	top: 2.1rem;
+	width: 3.03rem;
+}
+.product14.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product14 .pic2 {
+	position: absolute;
+	left: 1.1rem;
+	top: 4rem;
+	width: 4.56rem;
+}
+.product14.swiper-slide-active .pic2 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+.product15 .title {
+	position: absolute;
+	left: 1.75rem;
+	top: 0.6rem;
+	width: 3.38rem;
+}
+.product15 .pic1 {
+	position: absolute;
+	left: 0.6rem;
+	top: 2.9rem;
+	width: 5.26rem;
+}
+.product15.swiper-slide-active .pic1 {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product16.swiper-slide-active .b1, .product16.swiper-slide-active .b2, .product16.swiper-slide-active .b3, .product16.swiper-slide-active .b4, .product16.swiper-slide-active .b5 {
+	-webkit-animation-name: fadeInUp2;
+	animation-name: fadeInUp2;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.product16.swiper-slide-active .b1 {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product16.swiper-slide-active .b2 {
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+.product16.swiper-slide-active .b3 {
+	-webkit-animation-delay: 1.4s;
+	animation-delay: 1.4s;
+}
+.product16.swiper-slide-active .b4 {
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+.product16.swiper-slide-active .b5 {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+.product16.swiper-slide-active .material {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+.product16 .title {
+	position: absolute;
+	left: 2.2rem;
+	top: 0.6rem;
+	width: 1.97rem;
+}
+.product16 .b1 {
+	position: absolute;
+	left: 0.23rem;
+	top: 4.12rem;
+	width: 1.47rem;
+}
+.product16 .b2 {
+	position: absolute;
+	left: 1.15rem;
+	top: 4.3rem;
+	width: 1.78rem;
+}
+.product16 .b3 {
+	position: absolute;
+	left: 2.29rem;
+	top: 4.15rem;
+	width: 1.96rem;
+}
+.product16 .b4 {
+	position: absolute;
+	left: 3.53rem;
+	top: 4.29rem;
+	width: 1.77rem;
+}
+.product16 .b5 {
+	position: absolute;
+	left: 4.83rem;
+	top: 4.23rem;
+	width: 1.44rem;
+}
+.product16 .material {
+	position: absolute;
+	left: 0;
+	top: 6.8rem;
+	width: 6.4rem;
 }

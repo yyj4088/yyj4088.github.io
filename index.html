@@ -2,47 +2,488 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+		<meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
 		<meta content="telephone=no"name="format-detection"/>
 		<title></title>
+		<link rel="stylesheet" href="css/animate.css">
 		<link rel="stylesheet" href="css/core.css">
-		<link rel="stylesheet" href="css/jquery.fullPage.css">
-		<script src="js/jquery-2.1.3.min.js"></script>
-		<script src="js/rem.js"></script>
-		<script src="js/hammer.min.js"></script>
-		<script src="js/jquery.fullPage.min.js"></script>
-		<script src="js/Loader.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/index.css">
+		
 	</head>
 	<body>
-		<div class="loading">
-			<div class="loadimg">
-				<img src="images/preload/avocado.png">
-				<p class="count"><span id="number"></span></p>
-			</div>
+	<div class="loading">
+		<div class="loadimg">
+			<img class="load1" src="images/preload/avocado.jpg">
+			<img class="load2" src="images/preload/avocado2.jpg">
+			<img class="load3" src="images/preload/avocado3.jpg">
+			<p class="count"><span id="number"></span></p>
 		</div>
-		<div id="main">
-			<div class="section s1">
-				<p class="t1">三大全新市场趋势</p>
+	</div>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	    	<div class="swiper-slide s1" data-hash="s1">
+				<img src="images/s1/title.png" alt="" class="title">
 				<div class="banner b1"><p>天然成分</p><img src="images/s1/pic1.png" alt=""></div>
 				<div class="banner b2"><p>无添加</p><img src="images/s1/pic2.png" alt=""></div>
 				<div class="banner b3"><p>异域风情</p><img src="images/s1/pic3.png" alt=""></div>
 			</div>
-			<div class="section s2">
-				<h3>第二屏</h3>
+			<div class="swiper-slide s2">
+				<img src="images/s2/title.png" alt="" class="title">
+				<div class="b1">
+					<img src="images/s2/pic1.png" alt="">
+					<p class="t2">相较2012年，这些趋势的<br/>关注度大幅提升</p>
+				</div>
+				<div class="line"><img src="images/s2/line.png" alt=""></div>
 			</div>
-			<div class="section s3">
-				<h3>第三屏</h3>
+			<div class="swiper-slide s3">
+				<img src="images/s3/title.png" alt="" class="title">
+				<img class="w1" src="images/s3/w1.png" alt="">
+				<img class="w2" src="images/s3/w2.png" alt="">
+				<img class="w3" src="images/s3/w3.png" alt="">
+				<img class="w4" src="images/s3/w4.png" alt="">
 			</div>
-			<div class="section s4">
-				<h3>第四屏</h3>
+			<div class="swiper-slide s4" data-hash="s4">
+				<img src="images/s4/title.png" alt="" class="title">
+				<img class="slider" src="images/s4/slider.png" alt="">
+				<img class="ball" src="images/s4/ball.png" alt="">
+				<div class="b1">
+					<img src="images/s4/pic1.png" alt="">
+					<p class="t2">科技</p>
+					<p class="t3">价格</p>
+					<p class="t4">纯天然</p>
+					<p class="t5">入门市场<br/>占比39％</p>
+					<p class="t6">中端市场<br/>占比47％</p>
+					<p class="t7">高端市场<br/>占比14％</p>
+					<img class="logo1" src="images/s4/logo1.png" alt="">
+					<img class="logo2" src="images/s4/logo2.png" alt="">
+					<img class="logo3" src="images/s4/logo3.png" alt="">
+					<img class="logo4" src="images/s4/logo4.png" alt="">
+					<img class="logo5" src="images/s4/logo5.png" alt="">
+					<img class="logo6" src="images/s4/logo6.png" alt="">
+					<img class="logo7" src="images/s4/logo7.png" alt="">
+					<img class="logo8" src="images/s4/logo8.png" alt="">
+					<img class="logo9" src="images/s4/logo9.png" alt="">
+					<img class="logo10" src="images/s4/logo10.png" alt="">
+					<img class="logo11" src="images/s4/logo11.png" alt="">
+					<img class="logo12" src="images/s4/logo12.png" alt="">
+					<img class="logo13" src="images/s4/logo13.png" alt="">
+				</div>
+				<div class="mask">
+					<p class="t8">点击播放<br/>品牌视频<br/>>>></p>
+					<img class="ud" src="images/s4/ud.png" alt="">
+					<img class="wave" src="images/s4/wave.png" alt="">
+					<video src="images/s4/movie.mp4" controls></video>
+					<p class="t9">点此关闭</p>
+				</div>
+			</div>
+	    	<!--品牌-->
+			<div class="swiper-slide brand brand1" data-hash="b1">
+				<h2><img src="images/brand/p1-title.png" alt="什么是Ultra Doux?"></h2>
+				<div>
+					<img src="images/brand/p1-txt1.png" alt="一个源自法国" class="fdi delay2">
+					<img src="images/brand/p1-img1.png" alt="" class="rtl delay0-5">
+				</div>
+				<div>
+					<img src="images/brand/p1-txt2.png" alt="始于1982年" class="fdi delay2-5">
+					<img src="images/brand/p1-img2.png" alt="" class="ltr delay1">
+				</div>
+				<div>
+					<img src="images/brand/p1-txt3.png" alt="法国挚爱天然护发品牌" class="fdi delay3">
+					<img src="images/brand/p1-img3.png" alt="" class="rtl delay1-5">
+				</div>
+			</div>
+			<div class="swiper-slide brand brand2" data-hash="b2">
+				<h2><img src="images/brand/p2-title.png" alt="欧洲No.2 护发品牌"></h2>
+				<div class="icons">
+					<img src="images/brand/p2-icon1.png" alt="" class="fdInD delay0-5">
+					<img src="images/brand/p2-icon2.png" alt="" class="fdInD delay1-5">
+					<img src="images/brand/p2-icon3.png" alt="" class="fdInD delay2-5">
+					<img src="images/brand/p2-icon4.png" alt="" class="fdInD delay3-5">
+				</div>
+			</div>
+			<div class="swiper-slide brand brand3" data-hash="b3">
+				<h2><img src="images/brand/p3-title.png" alt="保持强势增长"></h2>
+				<p>欧洲洗护市场整体<em>+0.4%</em></p>
+				<div class="increase">
+					<img src="images/brand/p3-icon1.png" alt="" class="bcIn delay1">
+					<img src="images/brand/p3-icon2.png" alt="" class="bcIn delay1">
+					<img src="images/brand/p3-icon3.png" alt="" class="bcIn delay1">
+					<img src="images/brand/p3-icon4.png" alt="" class="bcIn delay1">
+				</div>
+				<div class="icons">
+					<img src="images/brand/p2-icon1.png" alt="">
+					<img src="images/brand/p2-icon2.png" alt="">
+					<img src="images/brand/p2-icon3.png" alt="">
+					<img src="images/brand/p2-icon4.png" alt="">
+				</div>
+				<p>Ultra Doux<br>双位数增长</p>
+			</div>
+			<div class="swiper-slide brand brand4" data-hash="b4">
+				<h2><img src="images/brand/p4-title.png" alt="品牌4大特点"></h2>
+				<div>
+					<img src="images/brand/p4-img1.png" alt="" class="fdi duration0-5">
+					<img src="images/brand/p4-txt1.png" alt="1有机调和" class="rtl">
+				</div>
+				<div>
+					<img src="images/brand/p4-img2.png" alt="" class="fdi duration0-5 delay1">
+					<img src="images/brand/p4-txt2.png" alt="2温和纯净" class="rtl delay1">
+				</div>
+				<div>
+					<img src="images/brand/p4-img3.png" alt="" class="fdi duration0-5 delay2">
+					<img src="images/brand/p4-txt3.png" alt="3真诚卓效" class="rtl delay2">
+				</div>
+				<div>
+					<img src="images/brand/p4-img4.png" alt="" class="fdi duration0-5 delay3">
+					<img src="images/brand/p4-txt4.png" alt="4分享幸福" class="rtl delay3">
+				</div>
+			</div>
+			<div class="swiper-slide brand brand5" data-hash="b5">
+				<h2><img src="images/brand/p5-title.png" alt="1有机调和"></h2>
+				<div>
+					<img src="images/brand/p5-img1.png" alt="" class="ltr">
+					<p class="fdi delay1">数重精萃的无间融合</p>
+				</div>
+				<div>
+					<img src="images/brand/p5-img2.png" alt="" class="rtl delay2">
+					<p class="fdi delay3">取长补短带来更强功效</p>
+				</div>
+				<img src="images/brand/p5-flowers.png" alt="" class="flowers">
+			</div>
+			<div class="swiper-slide brand brand6" data-hash="b6">
+				<h2><img src="images/brand/p6-title.png" alt="2温和纯净"></h2>
+				<img src="images/brand/p6-txt1.png" class="txt1 fdi delay0-5" alt="温和配方">
+				<img src="images/brand/p6-txt2.png" class="txt2 fdi delay1-5" alt="0%添加尼泊金酯类防腐剂0%添加硅油">
+				<div class="bottle">
+					<img src="images/brand/p6-icon1.png" alt="" class="icon1 rttIn delay1-5 duration0-5">
+					<img src="images/brand/p6-icon2.png" alt="" class="icon2 rttIn delay1-5 duration0-5">
+					<img src="images/brand/p6-flowers.png" alt="" class="flowers zmIn  delay1">
+					<img src="images/brand/p6-bottle.png" alt="" class="prd zmInD">
+					
+				</div>
+				<p>水舞樱花、5重植萃<br>及海藻澄净系列无硅油</p>
+			</div>
+			<div class="swiper-slide brand brand7" data-hash="b7">
+				<h2><img src="images/brand/p7-title.png" alt="3效果真实可感"></h2>
+				<img src="images/brand/p7-txt1.png" class="txt1 fdi delay0-5" alt="赋予秀发生命活力自然绽放真实质感">
+				<div class="fdi delay1">
+					<section><i class="delay1"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+					<img src="images/brand/p7-txt2.png" alt="自然飘逸">
+				</div>
+				<div class="fdi delay2">
+					<section><i class="delay2"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+					<img src="images/brand/p7-txt3.png" alt="可亲可触">
+				</div>
+				<div class="fdi delay3">
+					<section><i class="delay3"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+					<img src="images/brand/p7-txt4.png" alt="如有生命一般">
+				</div>
+				<img src="images/brand/p7-img.png" class="img" alt="">
+			</div>
+			<div class="swiper-slide brand brand8" data-hash="b8">
+				<h2><img src="images/brand/p8-title.png" alt="4分享幸福"></h2>
+				<img src="images/brand/p8-txt1.png" class="txt1 fdi delay0-5" alt="淳萃的社会使命是传递分享自然 的美好，回馈社会，用爱温暖世界。">
+				<img src="images/brand/p8-img.png" class="img fdi delay1" alt="">
+				<img src="images/brand/p8-txt2.png" class="txt2 fdi delay1-5" alt="联合国儿童基金会（The United Nations Children's Fund）（舊称聯合國國際兒童緊急救援基金會，United Nations International Children's Emergency Fund，故简称UNICEF；）.">
+			</div>
+			<div class="swiper-slide brand brand9" data-hash="b9">
+				<h2><img src="images/brand/p9-title.png" alt="Ultra DOUX 淳萃"></h2>
+				<img src="images/brand/p9-txt1.png" class="txt1 fdi" alt="这就是">
+				<img src="images/brand/p9-txt2.png" class="txt2 ltr delay2 duration0-5" alt="Pure淳正天然配方调和">
+				<img src="images/brand/p9-txt3.png" class="txt3 rtl delay3 duration0-5" alt="Extract取自天然精萃">
+				<img src="images/brand/p9-txt4.png" class="txt4 fdi delay0-5" alt="淳萃">
+				<img src="images/brand/p9-dome.png" class="dome fdInD delay1" alt="">
+				<img src="images/brand/p9-oil.png" class="oil fdi delay4" alt="">
+				<img src="images/brand/p9-txt5.png" class="txt5 fdi delay2" alt="源自法国，淳萃天然秀发更健康">
+				<img src="images/brand/p9-leave1.png" class="leave1" alt="">
+				<img src="images/brand/p9-leave2.png" class="leave2" alt="">
+				<img src="images/brand/p9-leave3.png" class="leave3" alt="">
+			</div>
+			<div class="swiper-slide brand brand10" data-hash="b10">
+				<h2><img src="images/brand/p10-title.png" alt="经过多方权威机构数次实验证实"></h2>
+				<img src="images/brand/p10-txt1.png" class="txt1 fdi delay0-5" alt="Ultra Doux品质备受用户信赖 市场前景值得期待">
+				<img src="images/brand/p10-img.png" class="img fdi delay1" alt="">
+				<img src="images/brand/p9-leave1.png" class="leave1" alt="">
+				<img src="images/brand/p9-leave2.png" class="leave2" alt="">
+				<img src="images/brand/p9-leave3.png" class="leave3" alt="">
+			</div>
+			<div class="swiper-slide brand brand11" data-hash="b11">
+				<img src="images/brand/p11-title.png" class="title fdi" alt="designor forecast所属权威测试机构">
+				<img src="images/brand/p11-bar.png" class="bar" alt="designor forecast">
+				<img src="images/brand/p11-txt1.png" class="txt1 fdi delay1" alt="权威测试机构">
+				<img src="images/brand/p11-txt2.png" class="txt2 ltr delay2" alt="">
+				<img src="images/brand/p11-txt3.png" class="txt3 ltr delay3" alt="">
+				<img src="images/brand/p11-txt4.png" class="txt4 ltr delay4" alt="">
+				<img src="images/brand/p9-leave1.png" class="leave1" alt="">
+				<img src="images/brand/p9-leave2.png" class="leave2" alt="">
+				<img src="images/brand/p9-leave3.png" class="leave3" alt="">
+			</div>
+			<div class="swiper-slide brand brand12" data-hash="b12">
+				<img src="images/brand/p11-bar.png" class="bar" alt="designor forecast">
+				<div class="inner">
+					<img src="images/brand/p12-title.png" class="title" alt="权威的商业测试">
+					<img src="images/brand/p12-menu.png" alt="" class="menu">
+					<img src="images/brand/p12-txt1.png" alt="产品概念" class="txt1 fdi">
+					<div class="fdi delay1">
+						<section><i class="delay1-5"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+						<img src="images/brand/p12-txt2.png" alt="洗发功效" class="txt2">
+					</div>
+					<div class="fdi delay2">
+						<section><i class="delay2-5"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+						<img src="images/brand/p12-txt3.png" alt="0%添加硅油" class="txt3">
+					</div>
+					<div class="fdi delay3">
+						<section><i class="delay3-5"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+						<img src="images/brand/p12-txt4.png" alt="调和天然及牛油果成分" class="txt4">
+					</div>
+					<div class="fdi delay4">
+						<section><i class="delay4"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+						<img src="images/brand/p12-txt5.png" alt="法国挚爱品牌" class="txt5">
+					</div>
+				</div>
+				<img src="images/brand/p9-leave1.png" class="leave1" alt="">
+				<img src="images/brand/p9-leave2.png" class="leave2" alt="">
+				<img src="images/brand/p9-leave3.png" class="leave3" alt="">
+			</div>
+			<div class="swiper-slide brand brand13" data-hash="b13">
+				<img src="images/brand/p11-bar.png" class="bar" alt="designor forecast">
+				<div class="inner">
+					<img src="images/brand/p12-title.png" class="title" alt="权威的商业测试">
+					<img src="images/brand/p13-menu.png" alt="" class="menu">
+					<img src="images/brand/p13-txt1.png" alt="产品包装及货架陈列 消费者认可淳萃包装及陈列" class="txt1 fdi">
+					<div class="fdi delay1">
+						<section><i class="delay1-5"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+						<img src="images/brand/p13-txt2.png" alt="洗发功效" class="txt2">
+					</div>
+					<div class="fdi delay2">
+						<section><i class="delay2-5"><img src="images/brand/p7-icon2.png" alt=""></i></section>
+						<img src="images/brand/p13-txt3.png" alt="0%添加硅油" class="txt3">
+					</div>
+				</div>
+				<img src="images/brand/p9-leave1.png" class="leave1" alt="">
+				<img src="images/brand/p9-leave2.png" class="leave2" alt="">
+				<img src="images/brand/p9-leave3.png" class="leave3" alt="">
+			</div>
+			<div class="swiper-slide brand brand14" data-hash="b14">
+				<img src="images/brand/p11-bar.png" class="bar" alt="designor forecast">
+				<section>
+					<img src="images/brand/p12-title.png" alt="权威的商业测试" class="title">
+					<img src="images/brand/p14-menu.png" alt="" class="menu">
+					<img src="images/brand/p14-txt.png" alt="生意预估 合品牌、宣传、促销支持 Designor模型预估 淳萃上市 首年市场份额可达2.8%  " class="txt1 fdi">
+				</section>
+				<img src="images/brand/p9-leave1.png" class="leave1" alt="">
+				<img src="images/brand/p9-leave2.png" class="leave2" alt="">
+				<img src="images/brand/p9-leave3.png" class="leave3" alt="">
+			</div>
+			<!-- 产品 -->
+			<div class="swiper-slide product1" data-hash="p1">
+				<img src="images/pro1/title.png" alt="" class="title">
+				<img src="images/pro1/circle.png" alt="" class="circle">
+				<div class="outer"></div>
+				<div class="outer2"></div>
+				<div class="outer3"><img src="images/pro1/circle2.png" alt=""></div>
+			</div>
+			<div class="swiper-slide product2" data-hash="p2">
+				<img src="images/pro2/title.png" alt="" class="title">
+				<img src="images/pro2/flower.png" alt="" class="flower">
+				<img src="images/pro2/b1.png" alt="" class="b1">
+				<img src="images/pro2/b2.png" alt="" class="b2">
+				<img src="images/pro2/b5.png" alt="" class="b5">
+				<img src="images/pro2/b4.png" alt="" class="b4">
+				<img src="images/pro2/b3.png" alt="" class="b3">
+				<img src="images/pro2/icon.png" alt="" class="icon">
+				<img src="images/pro2/material.png" alt="" class="material">
+			</div>
+			<div class="swiper-slide product3" data-hash="p3">
+				<img src="images/pro3/title.png" alt="" class="title">
+				<img src="images/pro3/product.png" alt="" class="product">
+				<img src="images/pro3/pic1.png" alt="" class="pic1">
+				<img src="images/pro3/pic2.png" alt="" class="pic2">
+				<img src="images/pro3/btn.png" alt="" class="detailbtn">
+				<p class="suit">干涩、<br/>难打理发质&nbsp;</p>
+				<div class="popup">
+					<img src="images/pro3/popup.jpg" alt="" class="detail">
+					<a href="javascript:;" class="close"></a>
+				</div>
+			</div>
+			<div class="swiper-slide product4" data-hash="p4">
+				<img src="images/pro4/title.png" alt="" class="title">
+				<img src="images/pro4/product.png" alt="" class="product">
+				<img src="images/pro4/pic1.png" alt="" class="pic1">
+				<img src="images/pro4/pic2.png" alt="" class="pic2">
+				<img src="images/pro3/btn.png" alt="" class="detailbtn">
+				<p class="suit">干涩、<br/>难打理发质&nbsp;</p>
+				<div class="popup">
+					<img src="images/pro4/popup.jpg" alt="" class="detail">
+					<a href="javascript:;" class="close"></a>
+				</div>
+			</div>
+			<div class="swiper-slide product5" data-hash="p5">
+				<img src="images/pro5/title.png" alt="" class="title">
+				<img src="images/pro5/product.png" alt="" class="product">
+				<img src="images/pro5/pic1.png" alt="" class="pic1">
+				<img src="images/pro5/pic2.png" alt="" class="pic2">
+				<img src="images/pro5/pic3.png" alt="" class="pic3">
+				<img src="images/pro3/btn.png" alt="" class="detailbtn">
+				<p class="suit">油头皮、<br/>干发丝&nbsp;</p>
+				<div class="popup">
+					<img src="images/pro5/popup.jpg" alt="" class="detail">
+					<a href="javascript:;" class="close"></a>
+				</div>
+			</div>
+			<div class="swiper-slide product6" data-hash="p6">
+				<img src="images/pro6/title.png" alt="" class="title">
+				<img src="images/pro6/product.png" alt="" class="product">
+				<img src="images/pro6/pic1.png" alt="" class="pic1">
+				<img src="images/pro6/pic2.png" alt="" class="pic2">
+				<img src="images/pro3/btn.png" alt="" class="detailbtn">
+				<p class="suit">干枯、<br/>黯哑发质&nbsp;</p>
+				<div class="popup">
+					<img src="images/pro6/popup.jpg" alt="" class="detail">
+					<a href="javascript:;" class="close"></a>
+				</div>
+			</div>
+			<div class="swiper-slide product7" data-hash="p7">
+				<img src="images/pro7/title.png" alt="" class="title">
+				<img src="images/pro7/product.png" alt="" class="product">
+				<img src="images/pro7/pic1.png" alt="" class="pic1">
+				<img src="images/pro7/pic2.png" alt="" class="pic2"> 
+				<img src="images/pro3/btn.png" alt="" class="detailbtn">
+				<p class="suit">头屑、<br/>油性发质&nbsp;</p>
+				<div class="popup">
+					<img src="images/pro7/popup.jpg" alt="" class="detail">
+					<a href="javascript:;" class="close"></a>
+				</div>
+			</div>
+			<div class="swiper-slide product8" data-hash="p8">
+				<img src="images/pro8/title.png" alt="" class="title">
+				<img src="images/pro8/pic1.png" alt="" class="pic1">
+				<img src="images/pro8/pic2.png" alt="" class="pic2"> 
+			</div>
+			<div class="swiper-slide product9" data-hash="p9">
+				<img src="images/pro9/title.png" alt="" class="title">
+				<img src="images/pro9/pic1.png" alt="" class="pic1">
+				<img src="images/pro9/pic2.png" alt="" class="pic2"> 
+				<img src="images/pro9/btns.png" alt="" class="btns"> 
+			</div>
+			<div class="swiper-slide product10" data-hash="p10">
+				<img src="images/pro9/title.png" alt="" class="title">
+				<img src="images/pro10/pic1.png" alt="" class="pic1">
+				<img src="images/pro10/pic2.png" alt="" class="pic2"> 
+				<img src="images/pro10/btns.png" alt="" class="btns"> 
+			</div>
+			<div class="swiper-slide product11" data-hash="p11">
+				<img src="images/pro9/title.png" alt="" class="title">
+				<img src="images/pro11/pic1.png" alt="" class="pic1">
+				<img src="images/pro11/pic2.png" alt="" class="pic2"> 
+				<img src="images/pro11/btns.png" alt="" class="btns"> 
+			</div>
+			<div class="swiper-slide product12" data-hash="p12">
+				<img src="images/pro12/title.png" alt="" class="title">
+				<img src="images/pro12/pic1.png" alt="" class="pic1">
+				<img src="images/pro12/pic2.png" alt="" class="pic2"> 
+			</div>
+			<div class="swiper-slide product13" data-hash="p13">
+				<img src="images/pro13/title.png" alt="" class="title">
+				<img src="images/pro13/pic1.png" alt="" class="pic1">
+				<img src="images/pro13/pic2.png" alt="" class="pic2"> 
+			</div>
+			<div class="swiper-slide product14" data-hash="p14">
+				<img src="images/pro14/title.png" alt="" class="title">
+				<img src="images/pro14/pic1.png" alt="" class="pic1">
+				<img src="images/pro14/pic2.png" alt="" class="pic2"> 
+			</div>
+			<div class="swiper-slide product15" data-hash="p15">
+				<img src="images/pro15/title.png" alt="" class="title">
+				<img src="images/pro15/pic1.png" alt="" class="pic1">
+			</div>
+			<div class="swiper-slide product16" data-hash="p16">
+				<img src="images/pro16/title.png" alt="" class="title">
+				<img src="images/pro2/b1.png" alt="" class="b1">
+				<img src="images/pro2/b2.png" alt="" class="b2">
+				<img src="images/pro2/b5.png" alt="" class="b5">
+				<img src="images/pro2/b4.png" alt="" class="b4">
+				<img src="images/pro2/b3.png" alt="" class="b3">
+				<img src="images/pro2/material.png" alt="" class="material">
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<div id="menu">
+		<img class="logo" src="images/UD.png" alt="">
+		<img id="btn" src="images/menubtn.png" alt="">
+		<div class="accordion">
+			<div class="section">
+				<input type="radio" name="accordion-1" id="section-1" onclick='check(this)'/>
+				<label for="section-1"><p data-num="pa1">市场</p></label>
+				<div class="content">
+					<ul>
+						<li><a data-num="pa2" href="javascript:;">市场消费趋势</a></li>
+						<li><a data-num="pa3" href="javascript:;">消费群体分析</a></li>
+						<li><a data-num="pa4" href="javascript:;">市场前景分析</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="section">
+				<input type="radio" name="accordion-1" id="section-2" onclick='check(this)' value="toggle"/>
+				<label for="section-2"><p data-num="pa5">品牌</p></label>
+				<div class="content">
+					<ul>
+						<li><a data-num="pa5" href="javascript:;">品牌介绍</a></li>
+						<li><a data-num="pa6" href="javascript:;">市场地位</a></li>
+						<li><a data-num="pa8" href="javascript:;">四大特点</a></li>
+						<li><a data-num="pa14" href="javascript:;">权威商业测试</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="section">
+				<input type="radio" name="accordion-1" id="section-3" onclick='check(this)' value="toggle"/>
+				<label for="section-3"><p data-num="pa19">产品</p></label>
+				<div class="content">
+					<ul>
+						<li><a data-num="pa19" href="javascript:;">市场需求</a></li>
+						<li><a data-num="pa20" href="javascript:;">5大产品系列</a></li>
+						<li><a data-num="pa26" href="javascript:;">产品测试</a></li>
+						<li><a data-num="pa27" href="javascript:;">市场反馈</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="section">
+				<input type="radio" name="accordion-1" id="section-4" onclick='check(this)' value="toggle"/>
+				<label for="section-4"><p data-num="pa30">推广</p></label>
+				<div class="content">
+					<li><a data-num="pa31" href="javascript:;">有钱任性的媒体</a></li>
+					<li><a data-num="pa32" href="javascript:;">天女散花的派样</a></li>
+					<li><a data-num="pa33" href="javascript:;">沐浴春风的陈列</a></li>
+				</div>
 			</div>
 		</div>
-		<input type="checkbox" id="tm" style="display: none;">
-		<div class="menu">
-			<img class="logo" src="images/UD.png" alt="">
-			<label for="tm"><img class="btn" src="images/menubtn.png" alt=""></label>
-		</div>
-	</body>
+	</div>
+
+	<!--script data-main="js/index"src="js/libs/require.js"></script-->
+	<script src="js/rem.js"></script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/Loader.js"></script>
+	<script src="js/swiper.jquery.min.js"></script>
+	<script src="js/hammer.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+			height: window.innerHeight,
+			speed:100,
+			direction: 'vertical',
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			hashnav: true,
+			paginationBulletRender: function(index, className) {
+				return '<span class="' + className + " pa"+(index + 1)+ '">' + (index + 1) + '</span>';
+			}
+		});
+	</script>
 	<script type="text/javascript" src="js/core.js"></script>
+	</body>
 </html>
